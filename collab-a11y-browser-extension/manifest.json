@@ -1,0 +1,73 @@
+{
+  "manifest_version": 2,
+  "name"            : "CollabAlly",
+  "version"         : "0.8",
+  "description"     : "Accessible Google Doc Collaboration for People with Visual Impairments",
+
+  "browser_action": {
+    "default_icon": {
+      "19" : "/images/icon19.png",
+      "38" : "/images/icon38.png"
+    },
+    "default_title": "Accessible Google Doc Collaboration"
+  },
+
+  "background" : {
+    "scripts": [
+      "background/background.js"
+    ],
+    "persistent": true
+  },
+
+  "web_accessible_resources": [
+    "dialog.html",
+    "settings.html"
+  ],
+
+  "commands": {
+    "displayModal": {
+        "suggested_key": {
+            "default": "Shift+Alt+1"
+        },
+        "description": "Display the dialog box"
+    },
+    "showSettings": {
+      "suggested_key": {
+        "default": "Shift+Alt+2"
+    },
+    "description": "Comment Change Summaries"
+    },
+    "connectSocket": {
+      "suggested_key": {
+        "default": "Shift+Alt+0"
+    },
+    "description": "Initialize Connection to Server"
+    }
+  },
+
+  "content_scripts": [
+    {
+        "js": [
+            "/external_scripts/ally.min.js",
+            "/external_scripts/jquery.min.js",
+            "/external_scripts/socket.io.js",
+            "/external_scripts/resonance-audio.min.js",
+            "/content/content.js"
+        ], 
+        "matches": [
+            "https://docs.google.com/document/*"
+        ], 
+        "run_at": "document_start"
+    }
+  ],
+
+  "icons": {
+    "16"  : "images/icon16.png",
+    "48"  : "images/icon48.png",
+    "128" : "images/icon128.png"
+  },
+
+  "permissions": [
+    "tabs"
+  ]
+}

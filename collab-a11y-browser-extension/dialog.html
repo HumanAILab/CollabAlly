@@ -1,0 +1,93 @@
+
+<!-- The Modal -->
+<div role="document" tabindex="-1" id="myModal" class="modal">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 901; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h1,h2,h3,h4,h5 {
+      font-weight: 800;
+    }
+
+    h1{
+      font-size: 1.75em;
+    }
+
+    h2{
+      font-size: 1.5em;
+    }
+
+    h3{
+      font-size: 1.1em;
+    }
+
+    h6 {
+      font-size: 0.75em;
+    }
+    </style>
+  <!-- Modal content -->
+  <!-- For language, see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang -->
+  <div id="main_modal" class="modal-content" role="alert" tabindex="1" aria-modal="true">
+    <span id="close_modal" class="modal_close">Close Window</span>
+    <div id="modal-body">
+        <h2 id="modal-status" style="font-weight: 100">Loading Information...</h2>
+        <h6 id="modal-instructions">To interact with the dialog box, switch between the Collaborator, Comments, and Text Changes buttons to view the different changes in the document. Once you select the specific changes you want to see, navigate through the subsequent elements of the dialog box to hear details about the elements. Press the 'copy to clipboard' button to copy the selected text elements so you can find it in the document after you close the dialog box. Press the other buttons to hear the spatial location of the elements with different voice fonts.</h6>
+        <div id="modal-content" style="display: block">
+            <div class="w3-bar w3-black">
+                <button id="tab_Collaborators" class="tab_button w3-bar-item w3-button" role='button' aria-pressed="false">Collaborators</button>
+                <button id="tab_Comments" class="tab_button w3-bar-item w3-button" role='button' aria-pressed="false">Comments</button>
+                <button id="tab_Text" class="tab_button w3-bar-item w3-button" role='button' aria-pressed="false">Text Changes</button>
+            </div>
+            <div id="Collaborators" class="changes">
+            </div>
+            
+            <div id="Comments" class="changes" style="display:none">
+            </div>
+            
+            <div id="Text" class="changes" style="display:none">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/js/dialog.js"></script>
+<script src="https://www.w3.org/TR/wai-aria-practices/examples/js/utils.js"></script>

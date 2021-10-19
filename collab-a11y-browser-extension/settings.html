@@ -1,0 +1,195 @@
+<!-- The Modal -->
+<div role="document" tabindex="-1" id="settingsModal" class="modal_settings">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        /* The Modal (background) */
+        .modal_settings {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 905; /* Sit on top */
+            padding: 200px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(255,255,255,0.75); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h1,h3,h4,h5 {
+        font-weight: 800;
+        }
+
+        .h1_settings{
+        font-size: 1.5em;
+        }
+
+        .h2_settings {
+        font-size: 0.75em;
+        }
+      </style>
+    <!-- Modal content -->
+    <!-- For language, see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang -->
+    <div id="main_settings" class="settings-content" role="alert" tabindex="1" aria-modal="true">
+      <span id="close_settings" class="settings_close">Close Window</span>
+      <div id="settings-body">
+          <h1 id="settings-status" class="h1_settings">Settings</h1>
+          <h2 class="h2_settings">To fine-tune the way that the voice fonts are visualized, please tune the following values in the form below.</h2>
+          <div id="settings-content" style="display: block">
+            <div class="w3-bar w3-black">
+                <button id="tab_collabally_settings" class="tab_button w3-bar-item w3-button" role='button' aria-pressed="false">General</button>
+                <button id="tab_collabally_advanced" class="tab_button w3-bar-item w3-button" role='button' aria-pressed="false">Advanced Settings</button>
+            </div>
+              <form id="collabally_settings" class="settings_tab">
+                <!-- Audio Visualization Method -->
+                <fieldset>
+                    <legend>Information Delivery Mode</legend>
+                    <input id="Concise" type="radio" name="delivery" value="Concise" checked>
+                    <label for="Concise">Concise Delivery</label><br>
+                    <input id="Narrative" type="radio" name="delivery" value="Narrative">
+                    <label for="Narrative">Narrative-Styled Delivery</label><br>
+                </fieldset>
+
+                <!-- Gender -->
+                <fieldset>
+                    <legend>Voice Gender</legend>
+                    <input id="Male" type="radio" name="gender" value="Male">
+                    <label for="Male">Male</label><br>
+                    <input id="Female" type="radio" name="gender" value="Female" checked>
+                    <label for="Female">Female</label><br>
+                </fieldset>
+
+                <!-- Accent -->
+                <fieldset>
+                    <legend>Voice Accent</legend>
+                    <input id="GB" type="radio" name="accent" value="GB" checked>
+                    <label for="GB">British (GB)</label><br>
+                    <input id="US" type="radio" name="accent" value="US">
+                    <label for="US">United States (US)</label><br>
+                    <input id="AU" type="radio" name="accent" value="AU">
+                    <label for="AU">Australia (AU)</label><br>
+                    <input id="IN" type="radio" name="accent" value="IN">
+                    <label for="IN">India (IN)</label><br>
+                </fieldset>
+
+                <!-- Audio Directionality -->
+                <fieldset>
+                    <legend>Spatial Audio Direction</legend>
+                    <input id="LR" type="radio" name="direction" value="LR" checked>
+                    <label for="LR">Left to Right</label><br>
+                    <input id="RL" type="radio" name="direction" value="RL">
+                    <label for="RL">Right to Left</label><br>
+                    <input id="TB" type="radio" name="direction" value="TB">
+                    <label for="TB">Top to Bottom</label><br>
+                    <input id="BT" type="radio" name="direction" value="BT">
+                    <label for="BT">Bottom to Top</label><br>
+                    <input id="FB" type="radio" name="direction" value="FB">
+                    <label for="FB">Front to Back</label><br>
+                    <input id="BF" type="radio" name="direction" value="BF">
+                    <label for="BF">Back to Front</label><br>
+                </fieldset>
+
+                <!-- TTS Speed -->
+                <label for="tts_speed">Speaking Speed</label>
+                    <input type="range"
+                        id="tts_speed"
+                        min="0.25"
+                        max="3"
+                        value="1"
+                        step="0.25"
+                        aria-valuemin="0.25"
+                        aria-valuemax="4"
+                        aria-valuenow="1"
+                        class="settings_slider">
+                <output for="tts_speed" id="speed">1</output><br>
+
+                <button id="TTS_preview">Preview Voice</button>
+
+                <input type="submit" value="Save and Close">
+              </form> 
+
+              <form id="collabally_advanced" class="settings_tab">
+                <label for="room_width">Virtual Room Width</label>
+                    <input type="range"
+                    id="room_width"
+                    min="0.25"
+                    max="4"
+                    value="1"
+                    step="0.25"
+                    aria-valuemin="0.25"
+                    aria-valuemax="4"
+                    aria-valuenow="1"
+                    class="settings_slider">
+                <output for="room_width" id="width">1</output><br>
+
+                <label for="room_height">Virtual Room Height</label>
+                    <input type="range"
+                    id="room_height"
+                    min="0.25"
+                    max="4"
+                    value="1"
+                    step="0.25"
+                    aria-valuemin="0.25"
+                    aria-valuemax="4"
+                    aria-valuenow="1"
+                    class="settings_slider">
+                <output for="room_height" id="height">1</output><br>
+                
+                <label for="room_depth">Virtual Room Depth</label>
+                    <input type="range"
+                    id="room_depth"
+                    min="0.25"
+                    max="4"
+                    value="1"
+                    step="0.25"
+                    aria-valuemin="0.25"
+                    aria-valuemax="4"
+                    aria-valuenow="1"
+                    class="settings_slider">
+                <output for="room_depth" id="depth">1</output><br>
+
+                <fieldset>
+                    <legend>Virtual Room Material</legend>
+                    <input id="brick" type="radio" name="accent" value="brick" checked>
+                    <label for="brick">Brick</label><br>
+                    <input id="curtains" type="radio" name="accent" value="curtains">
+                    <label for="curtains">Curtains</label><br>
+                    <input id="marble" type="radio" name="accent" value="marble">
+                    <label for="marble">Marble</label><br>
+                    <input id="outside" type="radio" name="accent" value="outside">
+                    <label for="outside">Outside</label><br>
+                </fieldset>
+
+                <input type="submit" value="Save and Close">
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/js/dialog.js"></script>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/js/utils.js"></script>
