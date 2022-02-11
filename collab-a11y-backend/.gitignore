@@ -1,0 +1,13 @@
+__pycache__/
+
+Server/python/__pycache__/
+Server/python/media/
+Server/python/changeDemos/
+
+
+*.json
+
+changeDemos/
+media/
+logs/
+

@@ -1,0 +1,12 @@
+bs4
+cdifflib
+urllib3
+requests
+flask
+flask_socketio
+flask_cors
+lxml
+google-cloud-texttospeech
+webcolors==1.3
+flask_pymongo
+diff_match_patch

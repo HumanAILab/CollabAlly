@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 /// WEB SOCKET IMPLEMENTATION
 //////////////////////////////////////////////////////////////////////////////////////////////
+// WARNING: You should change the host_ipv4 to your own web service IP address where you host
+// the backend server!!
 const host_ipv4= "https://collabally.humanailab.com:443"
-// const host_ipv4 = "https://35.223.209.32:443"
-// const host_ipv4 = "http://10.0.0.191:5000"
 var socket;
 var socketReady = false;
 var TTSPlaying = false;
